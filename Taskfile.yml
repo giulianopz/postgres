@@ -1,0 +1,23 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  build:
+    cmds:
+      - ./configure --with-libxml --without-icu --prefix=$(pwd)/build --libdir=$(pwd)/build/lib --enable-cassert --enable-debug
+      - make -j8
+      - make install
+  init:
+    cmds:
+      - ./build/bin/initdb pgdata 
+  start:
+    cmds:
+      - ./build/bin/pg_ctl -D pgdata  -l logfile start
+  stop:
+    cmds:
+      - ./build/bin/pg_ctl -D pgdata stop
+  psql:
+    cmds:
+      - ./build/bin/psql postgres
