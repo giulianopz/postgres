@@ -14,7 +14,7 @@ PGFILEDESC = "pg_buffercache - monitoring of shared buffer cache in real-time"
 REGRESS = pg_buffercache
 
 ifdef USE_PGXS
-PG_CONFIG = pg_config
+PG_CONFIG = ../../build/bin/pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 else

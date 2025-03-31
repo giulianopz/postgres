@@ -46,7 +46,7 @@ REGRESS = init md5 sha1 hmac-md5 hmac-sha1 blowfish rijndael \
 	pgp-pubkey-decrypt pgp-pubkey-encrypt pgp-info
 
 ifdef USE_PGXS
-PG_CONFIG = pg_config
+PG_CONFIG = ../../build/bin/pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 else

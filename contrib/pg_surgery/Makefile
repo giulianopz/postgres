@@ -12,7 +12,7 @@ PGFILEDESC = "pg_surgery - perform surgery on a damaged relation"
 REGRESS = heap_surgery
 
 ifdef USE_PGXS
-PG_CONFIG = pg_config
+PG_CONFIG = ../../build/bin/pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 else

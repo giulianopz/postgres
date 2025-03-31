@@ -9,7 +9,7 @@ PGFILEDESC = "file_fdw - foreign data wrapper for files"
 REGRESS = file_fdw
 
 ifdef USE_PGXS
-PG_CONFIG = pg_config
+PG_CONFIG = ../../build/bin/pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 else

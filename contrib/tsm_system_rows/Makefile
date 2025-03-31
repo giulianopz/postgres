@@ -12,7 +12,7 @@ DATA = tsm_system_rows--1.0.sql
 REGRESS = tsm_system_rows
 
 ifdef USE_PGXS
-PG_CONFIG = pg_config
+PG_CONFIG = ../../build/bin/pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 else

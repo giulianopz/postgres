@@ -14,7 +14,7 @@ DATA = jsonb_plpython3u--1.0.sql
 REGRESS = jsonb_plpython
 
 ifdef USE_PGXS
-PG_CONFIG = pg_config
+PG_CONFIG = ../../build/bin/pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 else

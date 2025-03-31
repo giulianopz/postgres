@@ -14,7 +14,7 @@ DATA = bool_plperlu--1.0.sql bool_plperl--1.0.sql
 REGRESS = bool_plperl bool_plperlu
 
 ifdef USE_PGXS
-PG_CONFIG = pg_config
+PG_CONFIG = ../../build/bin/pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 else

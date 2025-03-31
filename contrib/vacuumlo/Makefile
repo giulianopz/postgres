@@ -14,7 +14,7 @@ PG_CPPFLAGS = -I$(libpq_srcdir)
 PG_LIBS_INTERNAL = $(libpq_pgport)
 
 ifdef USE_PGXS
-PG_CONFIG = pg_config
+PG_CONFIG = ../../build/bin/pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 else
