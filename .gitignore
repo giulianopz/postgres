@@ -43,3 +43,8 @@ lib*.pc
 /Release/
 /tmp_install/
 /portlock/
+
+pgdata/
+logfile
+scripts/
+build/
