@@ -1,7 +1,6 @@
 # https://taskfile.dev
 
-version: '3'
-
+version: "3"
 
 tasks:
   build:
@@ -11,7 +10,7 @@ tasks:
       - make install
   init:
     cmds:
-      - ./build/bin/initdb pgdata 
+      - ./build/bin/initdb pgdata
   start:
     cmds:
       - ./build/bin/pg_ctl -D pgdata  -l logfile start
@@ -21,3 +20,10 @@ tasks:
   psql:
     cmds:
       - ./build/bin/psql postgres
+  bench:
+    cmds:
+      - ./build/bin/pgbench -i postgres
+      - ./build/bin/pgbench -j20 -c3 -T600 -P1 postgres
+  web:
+    cmds:
+      - pgweb --url postgres://$USER:postgres@localhost:5432/postgres?sslmode=disable
